@@ -2,13 +2,20 @@ package TestClass;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SImpleCode {
     @Test
     public void openGoogle() {
-       
+    	 ChromeOptions options = new ChromeOptions();
+
+         // IMPORTANT for CI/CD
+         options.addArguments("--headless=new");
+         options.addArguments("--no-sandbox");
+         options.addArguments("--disable-dev-shm-usage");
+
         
         WebDriver driver = new ChromeDriver();
 
