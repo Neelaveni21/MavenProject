@@ -12,12 +12,13 @@ public class SImpleCode {
     	 ChromeOptions options = new ChromeOptions();
 
          // IMPORTANT for CI/CD
-         options.addArguments("--headless=new");
-         options.addArguments("--no-sandbox");
-         options.addArguments("--disable-dev-shm-usage");
+    	 options.addArguments("--headless=new");
+    	 options.addArguments("--no-sandbox");
+    	 options.addArguments("--disable-dev-shm-usage");
+    	 options.addArguments("--remote-allow-origins=*");
 
         
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver(options);
 
         driver.get("https://www.google.com");
 
